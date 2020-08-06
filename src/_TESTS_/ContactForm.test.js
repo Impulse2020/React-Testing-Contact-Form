@@ -15,12 +15,14 @@ test('Contact form is submitted, and data is rendered onto screen', async() =>{
     const LNinput = screen.getByLabelText(/last name/i);
     const emailInput = screen.getByLabelText(/email/i);
     const messageInput = screen.getByLabelText(/message/i);
+    const favoritePet = screen.getByLabelText(/favorite pet/i);
   //put in dummy data
   await act(async()=>{
       fireEvent.change(FNinput,{target:{value:'Jef'}});
       fireEvent.change(LNinput,{target:{value:'Gallion'}});
       fireEvent.change(emailInput,{target:{value:'fake@gmail.com'}});
       fireEvent.change(messageInput,{target:{value:'live free die hard'}});
+      fireEvent.change(favoritePet,{target:{value:'Dog person'}});
       //grab submit button
       const submitBtn = screen.getByTestId("submit");
       //submit form

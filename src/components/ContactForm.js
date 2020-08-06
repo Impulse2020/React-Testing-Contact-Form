@@ -54,6 +54,14 @@ const ContactForm = () => {
           <textarea name="message" ref={register({ required: false })} />
           </label>
         </div>
+        <div>
+          <label htmlFor="person-type">Favorite pet?&nbsp;
+            <select name="favorite-pet" id="pets" ref={register({ required: false })}>
+              <option value="Cat person">Cat person</option>
+              <option value="Dog person">Dog person</option>
+            </select>
+          </label>
+        </div>
         {data && (
         <label data-testid="results">  
           <pre  style={{ textAlign: "left", color: "white" }}>
